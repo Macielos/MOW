@@ -40,3 +40,5 @@ collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMet
 #TODO 
 #k-neighbours, similarity-threshold
 #u Cichosza jest żeby przetestować na 2-3 zbiorach
+
+# Mikolaj: test działania RStudio z gitem
