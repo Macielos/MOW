@@ -2,7 +2,10 @@ library("recommenderlab")
 
 collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMethod, 
                        similarityMethod, trainMethod, 
-                       kCount, givenItems, predictType) {
+                       kCount, givenItems, nearestNeighbours, predictType) {
+  
+  print(paste(sep=", ", trainDatasetSize, recommendationMethod, similarityMethod, trainMethod, kCount, givenItems, nearestNeighbours));
+  
   matrix <- as(ratings, "realRatingMatrix");
   dataSets <- evaluationScheme(
     data = matrix, 
@@ -11,10 +14,17 @@ collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMet
     k = kCount,
     given = givenItems
   );
+  
+  if(recommendationMethod == "UBCF") {
+    recParams = list(method=similarityMethod, nn=nearestNeighbours)
+  } else {
+    recParams <- list(method=similarityMethod)
+  }
+  
   model <- Recommender(
     data = getData(dataSets, "train"), 
     method = recommendationMethod, 
-    param=list(method=similarityMethod)
+    param=recParams
   );
   
   predictions <- predict(model, getData(dataSets, "known"), type=predictType)
