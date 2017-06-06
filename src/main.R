@@ -5,6 +5,7 @@ collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMet
                        kCount, givenItems, nearestNeighbours, predictType) {
   
   print(paste(sep=", ", trainDatasetSize, recommendationMethod, similarityMethod, trainMethod, kCount, givenItems, nearestNeighbours));
+  startTime <- Sys.time();
   
   matrix <- as(ratings, "realRatingMatrix");
   dataSets <- evaluationScheme(
@@ -21,20 +22,27 @@ collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMet
     recParams <- list(method=similarityMethod)
   }
   
+  print("Training...");
   model <- Recommender(
     data = getData(dataSets, "train"), 
     method = recommendationMethod, 
     param=recParams
   );
   
+  print("Predicting...");
   predictions <- predict(model, getData(dataSets, "known"), type=predictType)
   
+  print("Calcing accuracy...");
   #Root Mean Squared Error/Mean Squared Error/Mean Absolute Error
   accuracy <- calcPredictionAccuracy(predictions, getData(dataSets, "unknown"), byUser = FALSE)
   
-  evaluationResults = evaluate(dataSets, recommendationMethod, type=predictType)
+  #print("Evaluating...")
   
-  return(list(model, predictions, accuracy, evaluationResults))
+  #evaluationResults = evaluate(dataSets, recommendationMethod, type=predictType)
+  
+  executionTime <- Sys.time() - startTime;
+  print(executionTime);
+  return(list(model, predictions, accuracy, executionTime))
 }
 
 #TODO 
