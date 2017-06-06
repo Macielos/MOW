@@ -14,7 +14,7 @@ collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMet
     train = trainDatasetSize, 
     k = kCount,
     given = givenItems,
-    goodRating = 4
+    goodRating = 4 # dla filmow = 4, dla ksiazek = 8
   );
   
   if(recommendationMethod == "UBCF") {

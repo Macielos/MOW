@@ -82,3 +82,4 @@ results2 <- list(
   
   collaborativeFiltering(books, 0.9, "UBCF", "Cosine",  "split",            1, 10, 5, "topNList"),
   collaborativeFiltering(books, 0.9, "UBCF", "Pearson", "split",            1, 10, 5, "topNList")
+)
