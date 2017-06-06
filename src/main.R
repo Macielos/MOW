@@ -37,15 +37,11 @@ collaborativeFiltering <- function (ratings, trainDatasetSize, recommendationMet
   #Root Mean Squared Error/Mean Squared Error/Mean Absolute Error
   accuracy <- calcPredictionAccuracy(predictions, getData(dataSets, "unknown"), byUser = FALSE)
   
-  #print("Evaluating...")
+  print("Evaluating...")
   
-  #evaluationResults = evaluate(dataSets, recommendationMethod, type=predictType)
+  evaluationResults = evaluate(dataSets, recommendationMethod, type=predictType)
   
   executionTime <- Sys.time() - startTime;
   print(executionTime);
   return(list(model, predictions, accuracy, executionTime))
 }
-
-#TODO 
-#k-neighbours, similarity-threshold
-#u Cichosza jest żeby przetestować na 2-3 zbiorach

@@ -23,9 +23,10 @@ results <- list(
   collaborativeFiltering(ratings, 0.9, "UBCF", "Pearson", "split",            1, 20, 10, "ratings"),
   
   collaborativeFiltering(ratings, 0.9, "IBCF", "Cosine",  "split",            1, 10, 5, "ratings"),
-  collaborativeFiltering(ratings, 0.9, "IBCF", "Pearson", "split",            1, 10, 5, "ratings")
+  collaborativeFiltering(ratings, 0.9, "IBCF", "Pearson", "split",            1, 10, 5, "ratings"),
   
-  
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "split",            1, 10, 5, "topNList"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Pearson", "split",            1, 10, 5, "topNList")
   
  # collaborativeFiltering(ratings, 0.9, "IBCF", "Cosine",  "bootstrap",        5, 10, 5, "ratings"),
 #  collaborativeFiltering(ratings, 0.9, "IBCF", "Pearson", "bootstrap",        5, 10, 5, "ratings"),
