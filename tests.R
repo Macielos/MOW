@@ -102,7 +102,15 @@ results2 <- list(
   collaborativeFiltering(ratings, 0.9, "UBCF", "Pearson", "cross-validation", 5, 10, 5, 4, "ratings"),
   
   collaborativeFiltering(ratings, 0.9, "IBCF", "Cosine",  "cross-validation", 5, 10, 5, 4, "ratings"),
-  collaborativeFiltering(ratings, 0.9, "IBCF", "Pearson", "cross-validation", 5, 10, 5, 4, "ratings")
+  collaborativeFiltering(ratings, 0.9, "IBCF", "Pearson", "cross-validation", 5, 10, 5, 4, "ratings"),
+  
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 20, 20, 4, "ratings"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 50, 50, 4, "ratings"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 20, 50, 4, "ratings"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 50, 20, 4, "ratings"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 10, 100, 4, "ratings"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 20, 100, 4, "ratings"),
+  collaborativeFiltering(ratings, 0.9, "UBCF", "Cosine",  "cross-validation", 5, 100, 100, 4, "ratings")
   )
 
 

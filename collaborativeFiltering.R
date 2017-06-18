@@ -66,5 +66,5 @@ collaborativeFiltering <- function (
               executionTime);
   resultFile = paste(sep="", "tests/", predictType, ".csv");
   writeLine(result, resultFile, append = TRUE)
-  return (c(recommender=recommender, accuracy=accuracy, executionTime=executionTime));
+  return (c(recommender=model, accuracy=accuracy, executionTime=executionTime));
 }
