@@ -1,9 +1,7 @@
 library("recommenderlab")
 source("collaborativeFiltering.R")
 
-#setwd("D:/workspace/MOW")
-
-dataFile = "data/ml-latest-filtered50k_500_10/ratings.csv"; 
+dataFile = "data/ml-latest-filtered10k_5000_100/ratings.csv"; 
 
 ratings <- read(dataFile);
 
